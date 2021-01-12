@@ -3,7 +3,7 @@ import React from 'react';
 const App = () => {
     return(
         <div>
-            NetlifyTests
+            NetlifyTest 2
         </div>
     );
 };
