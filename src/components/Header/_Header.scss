@@ -1,0 +1,61 @@
+@use '../../global-style/variables' as v;
+
+.header{
+    height: 7rem;
+    background-color: #fff;
+    border-bottom: v.$color-grey-light-2;
+}
+
+///////////////////////////////////////////////////////
+//LOGO
+.logo{
+    height: 3.25rem;
+}
+
+///////////////////////////////////////////////////////
+//SEARCH
+.search{
+    &__input{
+
+    }
+
+    &__button{
+
+    }
+
+    &__icon{
+        height: 2rem;
+        width: 2rem;
+    }
+}
+
+///////////////////////////////////////////////////////
+//USER-NAV
+.user-nav{
+
+    &__icon-box{
+
+    }
+
+    &__icon{
+        height: 3rem;
+        width: 3rem;
+    }
+
+    &__icon-notification{
+
+    }
+
+    &__user{
+
+        &-photo{
+            height: 3.75rem;
+            border-radius: 50%;
+        }
+
+        &-name{
+
+        }
+    }
+
+}
