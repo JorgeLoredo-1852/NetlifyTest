@@ -1,0 +1,9 @@
+@use '../../global-style/variables' as v;
+
+.hotel-view{
+    background-color: orangered;
+
+    //flex: 1;  ==  flex-grow: 1;
+    //flex-grow 1 means that it would grow the entire available space
+    flex: 1;
+}

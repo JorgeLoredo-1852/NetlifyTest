@@ -1,0 +1,8 @@
+@use '../../global-style/variables' as v;
+
+.sidebar{
+
+   //flex: flex-grow flex-shrink flex-basis; 
+    flex: 0 0 18%;
+    background-color: v.$color-grey-dark-1;
+}

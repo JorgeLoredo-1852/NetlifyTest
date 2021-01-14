@@ -1,0 +1,14 @@
+@use '../../global-style/variables' as v;
+
+.container{
+    max-width: 120rem;
+    background-color: v.$color-grey-light-1;
+    margin: 8rem auto;
+    box-shadow: v.$shadow-dark;
+
+    min-height: 40rem;
+}
+
+.content{
+    display: flex;
+}
