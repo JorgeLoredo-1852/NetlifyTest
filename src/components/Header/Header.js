@@ -22,10 +22,10 @@ const Header = () =>{
             </form>
 
             <nav className= "user-nav">
-                <Icon_box icon="#icon-bookmark" notification ="7"/>
-                <Icon_box icon="#icon-chat" notification ="20"/>
+                <IconBox icon="#icon-bookmark" notification ="7"/>
+                <IconBox icon="#icon-chat" notification ="20"/>
                 <div className="user-nav__user">
-                    <img src={user} alt="user photo" className="user-nav__user-photo"/>
+                    <img src={user} alt="user" className="user-nav__user-photo"/>
                     <span className="user-nav__user-name">Cesar</span>
                 </div>
             </nav>
@@ -33,7 +33,7 @@ const Header = () =>{
     );
 };
 
-const Icon_box = (props) =>{
+const IconBox = (props) =>{
     return(
         <div className="user-nav__icon-box">
             <svg className="user-nav__icon">
