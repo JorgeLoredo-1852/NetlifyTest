@@ -20,7 +20,7 @@ const SideBar = () =>{
 const Item = (props) => {
     return(
         <li className= {props.name === "Hotel" ? "side-nav__item side-nav__item--active" : "side-nav__item"}>
-            <a href="#" className="side-nav__link">
+            <a href="/" className="side-nav__link">
                 <svg className="side-nav__icon">
                     <use xlinkHref={xlink + props.icon}></use>
                 </svg>
