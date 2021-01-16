@@ -25,3 +25,38 @@ $shadow-light: 0 2rem 5rem rgba(0,0,0,.1);
 //BORDER LINE
 
 $line: 1px solid $color-grey-light-2;
+
+
+//MEDIA QUERIES
+
+@mixin response ($breakpoint) {
+    @if $breakpoint == bp-largest{
+        @media only screen and (max-width: 75em){      //1200px / 16px = 75em
+            @content;
+        }
+    }
+
+    @if $breakpoint == bp-large{
+        @media only screen and (max-width: 68.75em){      //1100px / 16px = 68.75em
+            @content;
+        }
+    }
+
+    @if $breakpoint == bp-medium{
+        @media only screen and (max-width: 56.25em){      //900px / 16px = 56.25em
+            @content;
+        }
+    }
+
+    @if $breakpoint == bp-small{
+        @media only screen and (max-width: 37.5em){      //600px / 16px = 37.5em
+            @content;
+        }
+    }
+
+    @if $breakpoint == bp-smallest{
+        @media only screen and (max-width: 31.25em){      //500px / 16px = 31.25em
+            @content;
+        }
+    }
+}

@@ -7,12 +7,15 @@ import img4 from '../../img/user-3.jpg';
 import img5 from '../../img/user-4.jpg';
 import img6 from '../../img/user-5.jpg';
 import img7 from '../../img/user-6.jpg';
+import user1 from '../../img/user-1.jpg';
+import user2 from '../../img/user-2.jpg';
 import xlink from '../../img/sprite.svg';
 import './_Hotel.scss'
 
 const Hotel = () =>{
     return(
         <main className="hotel-view">
+
 
 
             <div className="gallery">
@@ -26,6 +29,7 @@ const Hotel = () =>{
                     <img className="gallery__photo" alt="hotel3"  src={img3}/>
                 </figure>
             </div>
+
 
 
             <div className = "overview">
@@ -50,6 +54,7 @@ const Hotel = () =>{
                     <div className="overview__rating--count">429 votes</div>
                 </div>
             </div>
+
 
 
             <div className="detail">
@@ -81,10 +86,33 @@ const Hotel = () =>{
                     </div>
                 </div>
 
+
+
                 <div className="user-reviews">
-                    User Reviews
+                    <Review 
+                        text = "Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate delectus, inventore iure aliquid aliquam."
+                        photo = {user1}
+                        name = "Nick Smith"
+                        date = "Feb 23rd, 2017"
+                        rating = "7.8"
+                    />
+                    <Review 
+                        text = "Accusantium cumque, quas, ut corporis incidunt deserunt quae architecto voluptate delectus, inventore iure aliquid aliquam."
+                        photo = {user2}
+                        name = "Mary Thomas"
+                        date = "Sep 13th, 2017"
+                        rating = "9.3"
+                    />
+                    <button className="btn-inline">Show All<span>&rarr;</span></button>
                 </div>
             </div>
+            <div className="cta">
+                    <h2 className="cta__booknow">Good news we have 4 free rooms for your selected dates</h2>
+                    <button className="btn">
+                        <span className="btn-visible">Book Now</span>
+                        <span className="btn-invisible">Only 4 rooms left</span>
+                    </button>
+                </div>
         </main>
     );
 };
@@ -94,6 +122,24 @@ const Star = () => {
         <svg className="overview__icon--star">
             <use xlinkHref={xlink + "#icon-star"}></use>
         </svg>
+    );
+};
+
+const Review = (props) => {
+    return(
+        <figure className="review">
+            <blockquote className="review__text">
+                {props.text}
+            </blockquote>
+            <figcaption className="review__user">
+                <img src={props.photo} alt="user" className="review__user--photo"/>
+                <div className="review__user--box">
+                    <p className="review__user--name">{props.name}</p>
+                    <p className="review__user--date">{props.date}</p>
+                </div>
+                <div className="review__user--rating">{props.rating}</div>
+            </figcaption>
+        </figure>
     );
 };
 

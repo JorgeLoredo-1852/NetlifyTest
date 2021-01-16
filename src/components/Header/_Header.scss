@@ -9,6 +9,12 @@
     display: flex;
     justify-content:space-between;
     align-items: center;          //Align in Y direction
+
+    @include v.response(bp-smallest){
+        flex-wrap: wrap;
+        height: 11rem;
+        align-content: space-around;
+    }
 }
 
 ///////////////////////////////////////////////////////
@@ -26,6 +32,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    @include v.response(bp-smallest){
+        order: 1;
+        flex: 0 0 100%;
+        background-color: v.$color-grey-light-2;
+    }
 
     &__input{
         font-family: inherit;
