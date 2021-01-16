@@ -1,0 +1,404 @@
+@use '../../global-style/variables' as v;
+
+.hotel-view{
+
+    //flex: 1;  ==  flex-grow: 1;
+    //flex-grow 1 means that it would grow the entire available space
+    flex: 1;
+}
+
+
+//////////////////////////////////////////////////////////////////////////
+//GALLERY
+.gallery{
+    display: flex;
+    
+    &__photo{
+        width: 100%;
+        display: block;
+    }
+}
+
+//////////////////////////////////////////////////////////////////////////
+//OVERVIEW
+.overview{
+    border-bottom: 1px solid v.$color-grey-light-2;
+
+    display: flex;
+    align-items: center;
+
+    &__heading{
+        font-size: 2.25rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 1.5rem 3rem;
+
+        @include v.response(bp-small){
+            font-size: 1.5rem;
+            padding: 1.25rem 2rem;
+        }
+    }
+
+    &__stars{
+        margin-right: auto;
+        display: flex;
+    }
+
+    &__icon--star,
+    &__icon--location{
+        width: 1.75rem;
+        height: 1.75rem;
+        fill: v.$color-primary;
+
+    }
+
+    &__location{
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+    }
+
+    &__rating{
+
+        background-color: v.$color-primary;
+        color: white;
+        margin-left: 3rem;
+        align-self: stretch;
+        padding: 0 2.25rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        @include v.response(bp-small){
+            padding: 0 1.5rem;
+        }
+
+        &--average{
+            font-size: 2.25rem;
+            font-weight: 300;
+            margin-bottom: -3px;
+
+            @include v.response(bp-small){
+                font-size: 1.8rem;
+            }
+        }
+
+        &--count{
+            font-size: .8rem;
+            text-transform: uppercase;
+
+            @include v.response(bp-small){
+                font-size: .5rem;
+            }
+        }
+    }
+}
+
+//////////////////////////////////////////////////////////////////////////
+//DETAIL
+
+.detail{
+    background-color: v.$color-grey-light-1;
+    border-bottom: 1px solid v.$color-grey-light-2;
+    padding: 4.5rem;
+    display: flex;
+    font-size: 1.4rem;
+
+    @include v.response(bp-medium){
+        padding: 3rem;
+    }
+    
+    @include v.response(bp-small){
+        flex-direction: column;
+    }  
+}
+
+.description{
+    background-color: white;
+    flex: 0 0 60%;
+    margin-right: 4.5rem;
+    box-shadow: v.$shadow-light;
+    padding: 3rem;
+
+    .paragraph:not(:last-of-type){
+        margin-bottom: 2rem;
+    }
+
+    @include v.response(bp-medium){
+        margin-right: 3rem;
+        padding: 2rem;
+    }
+    
+    @include v.response(bp-small){
+        margin-right: 0;
+        margin-bottom: 3rem;
+    }  
+}
+
+.list{
+    border-bottom: v.$line;
+    border-top: v.$line;
+    list-style: none;
+    margin: 3rem 0;
+    padding: 3rem 0;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    
+
+    &__item{
+        flex: 0 0 50%;
+        
+        &:not(:last-child){
+            margin-bottom: .7rem;
+        }
+
+        &::before{
+            content: "";
+            display: inline-block;
+            height: 1rem;
+            width: 1rem;
+            margin-right: 1rem;
+
+            //Masks
+            background-color: v.$color-primary;
+            mask-image: url("../../img/chevron-thin-right.svg");
+            mask-size: cover;
+        }
+    }
+}
+
+.recommend{
+    font-size: 1.3rem;
+    color: v.$color-grey-dark-3;
+
+    display: flex;
+    align-items: center;
+
+    &__counts{
+        margin-right: auto;
+    }
+
+    &__friends{
+        display: flex;
+    }
+
+    &__photo{
+        box-sizing: content-box;
+        height: 4rem;
+        width: 4rem;
+        border-radius: 50%;
+        border: 3px solid white;
+
+        &:not(:last-child){
+            margin-right: -1.5rem;
+        }
+    }
+}
+
+
+
+.user-reviews{
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.review{
+
+    background-color: white;
+    padding: 3rem;
+    margin-bottom: 3.5rem;
+    box-shadow: v.$shadow-light;
+    font-size: 1.4rem;
+    overflow: hidden;
+    
+    position: relative;
+
+    @include v.response(bp-medium){
+        padding: 2rem;
+        margin-bottom: 3rem;
+    }  
+    
+    &__text{
+        margin-bottom: 2rem;
+        position: relative;
+        z-index: 10;
+    }
+
+    &__user{
+        
+        display: flex;
+        align-items: center;
+
+        &--photo{
+            height: 4.5rem;
+            width: 4.5rem;
+            border-radius: 50%;
+            margin-right: 1.5rem;
+        }
+
+        &--box{
+            margin-right: auto;
+        }
+
+        &--name{
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: .4rem;
+        }
+
+        &--date{
+            font-size: 1rem;
+            color: v.$color-grey-dark-3;
+        }
+        
+        &__rating{
+            color: v.$color-primary;
+            font-size: 2.2rem;
+            font-weight: 300;
+        }
+    }
+
+    &::before{
+        content: "\201C";
+        position: absolute;
+        top: -2.75rem;
+        left: -1rem;
+        font-size: 20rem;
+        line-height: 1;
+        color: v.$color-grey-light-2;
+        font-family: sans-serif;
+        z-index: 1;
+    }
+}
+
+//////////////////////////////////////////////////////////////////////////////
+//CALL TO ACTION   CTA
+
+.cta{
+    background-color: white;
+    padding: 3.5rem 0;
+    text-align: center;
+
+    @include v.response(bp-medium){
+        padding: 2rem;
+    }  
+
+    &__booknow{
+        font-size: 2rem;
+        font-weight: 300;
+        margin-bottom: 2.5rem;
+        text-transform: uppercase;
+    }
+}
+
+.btn{
+    border: none;
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    border-radius:100px;
+    background-image: linear-gradient(to right, v.$color-primary-light, v.$color-primary-dark);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    &-visible{
+        display: inline-block;
+        padding: 2rem 7.5rem;
+
+        height: 100%;
+        width: 100%;
+        transition: all .2s;
+    }
+
+    &-invisible{
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top:-100%;
+        padding: 2rem 0;
+        overflow: hidden;
+        transition: all .2s;
+    }   
+
+    &:hover{
+        background-image: linear-gradient(to left, v.$color-primary-light, v.$color-primary-dark);
+    }
+
+    &:hover &-visible{
+        transform: translateY(100%);
+    }
+
+    &:hover &-invisible{
+        top: 0;
+    }
+
+    &:focus{
+        outline: none;
+        animation: pulsate 1s infinite;
+    }
+}
+
+
+//////////////////////////////////////////////////////////////////////////////
+//BTN-INLINE
+
+.btn-inline{
+    margin-left: .5rem;
+    border: none;
+    color: v.$color-primary;
+    font-size: inherit;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+    display: inline-block;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all .2s;
+
+    & span{
+        margin-left: 3px;
+        transition: margin-left .2s;
+    }
+
+    &:hover{
+        color: v.$color-grey-dark-1;
+
+        span{
+            margin-left: 10px;
+        }
+    }
+
+    &:focus{
+        outline: none;
+        animation: pulsate 1s infinite;
+    }
+}
+
+@keyframes pulsate{
+    0%{
+        transform: scale(1);
+        box-shadow: none;
+    }
+
+    50%{
+        transform: scale(1.05);
+        box-shadow: 0 1rem 4rem rgba(0,0,0,.25);
+    }
+
+    100%{
+        transform: scale(1);
+        box-shadow: none;
+    }
+}

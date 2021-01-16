@@ -1,0 +1,22 @@
+@use '../../global-style/variables' as v;
+
+.container{
+    max-width: 120rem;
+    background-color: v.$color-grey-light-1;
+    margin: 8rem auto;
+    box-shadow: v.$shadow-dark;
+
+    @include v.response(bp-largest){
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+.content{
+    display: flex;
+    
+    @include v.response(bp-medium){
+        flex-direction: column;
+    }
+}

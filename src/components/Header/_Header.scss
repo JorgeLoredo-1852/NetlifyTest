@@ -1,0 +1,159 @@
+@use '../../global-style/variables' as v;
+
+.header{
+    height: 7rem;
+    background-color: #fff;
+    border-bottom: 1px solid v.$color-grey-light-2;
+    font-size: 1.4rem;
+
+    display: flex;
+    justify-content:space-between;
+    align-items: center;          //Align in Y direction
+
+    @include v.response(bp-smallest){
+        flex-wrap: wrap;
+        height: 11rem;
+        align-content: space-around;
+    }
+}
+
+///////////////////////////////////////////////////////
+//LOGO
+.logo{
+    height: 3.25rem;
+    margin-left: 2rem;
+}
+
+///////////////////////////////////////////////////////
+//SEARCH
+.search{
+    flex: 0 0 40%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    @include v.response(bp-smallest){
+        order: 1;
+        flex: 0 0 100%;
+        background-color: v.$color-grey-light-2;
+    }
+
+    &__input{
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        border: none;
+        background-color: v.$color-grey-light-2;
+        padding: .7rem 2rem;
+        border-radius: 100px;
+        width: 90%;
+        transition: all .2s;
+
+        margin-right: -3rem;
+
+        &:focus{
+            outline: none;
+            width: 100%;
+            background-color: v.$color-grey-light-3;
+        }
+
+        &::-webkit-input-placeholder{
+            font-weight: 100;
+            color: v.$color-grey-light-4;
+        }
+    }
+
+    &__input:focus + &__button{
+        background-color: v.$color-grey-light-3;
+    }
+
+    &__button{
+        border: none;
+        background-color: v.$color-grey-light-2;
+
+        &:focus{
+            outline: none;
+        }
+
+        &:active{
+            transform: translateY(2px);
+        }
+    }
+
+    &__icon{
+        height: 2rem;
+        width: 2rem;
+        fill: v.$color-grey-dark-3;
+    }
+}
+
+///////////////////////////////////////////////////////
+//USER-NAV
+.user-nav{
+
+    //Stretch the item to occupy 100% of the height of the flex-box
+    align-self: stretch;
+
+    display: flex;
+    align-items: center;
+
+    //All the direct childs of user-nav 
+    & > *{
+        height: 100%;
+        padding: 0 2rem;
+        cursor: pointer;
+        transition: all .2s;
+
+        //Align to the center vertically
+        display: flex;
+        align-items: center;
+    }
+
+    & > *:hover{
+        background-color: v.$color-grey-light-3;
+        cursor: pointer;
+    }
+
+    &__icon-box{
+        position: relative;
+    }
+
+    &__icon{
+        height: 2.25rem;
+        width: 2.25rem;
+        fill: v.$color-grey-dark-2;
+        
+    }
+
+    &__notification{
+        font-size: .9rem;
+        height: 1.75rem;
+        width: 1.75rem;
+        border-radius: 100px;
+        background-color: v.$color-primary;
+        color: #fff;
+        position: absolute;
+        top: 1.5rem;
+        right: 1.1rem;
+
+        //ALIGN TEXT 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__user{
+
+        &-photo{
+            height: 3.75rem;
+            border-radius: 50%;
+            margin-right: 1rem;
+        }
+
+        &-name{
+            font-weight: 400;
+        }
+    }
+
+}
