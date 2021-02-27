@@ -15,7 +15,7 @@ const App = () => {
         <Hotel />*/}</div>
       <GoogleLogin
         clientId="573398896027-s2gkdto402okk0v9ie2sp7u97oh7nekj.apps.googleusercontent.com"
-        onSuccess={() => console.log("YOU ENTERED")}
+        onSuccess={() => console.log(this)}
         onFailure={() => console.log("failure")}
       />
     </div>
