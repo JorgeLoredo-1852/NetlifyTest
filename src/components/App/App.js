@@ -3,8 +3,8 @@ import "../../global-style/_base.scss";
 import "./_App.scss";
 
 import Header from "../Header/Header";
-import SideBar from "../SideBar/SideBar";
-import Hotel from "../Hotel/Hotel";
+//import SideBar from "../SideBar/SideBar";
+//import Hotel from "../Hotel/Hotel";
 import { GoogleLogin } from "react-google-login";
 
 const App = () => {
