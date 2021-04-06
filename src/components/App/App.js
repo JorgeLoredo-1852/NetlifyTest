@@ -7,23 +7,29 @@ import SideBar from "../SideBar/SideBar";
 import Hotel from "../Hotel/Hotel";
 import { GoogleLogin } from "react-google-login";
 
-const App = () => {
-  return (
-    <React.Fragment>
-      <div className="container">
-        <Header />
-        <div className="content">
-          <SideBar />
-          <Hotel />
+class App extends React.Component {
+  responseGoogle = (response) => {
+    console.log(response);
+    console.log(response.profileObj);
+  };
+  render() {
+    return (
+      <React.Fragment>
+        <div className="container">
+          <Header />
+          <div className="content">
+            <SideBar />
+            <Hotel />
+          </div>
         </div>
-      </div>
-      <GoogleLogin
-        clientId="573398896027-s2gkdto402okk0v9ie2sp7u97oh7nekj.apps.googleusercontent.com"
-        onSuccess={() => console.log(this.profileObj)}
-        onFailure={() => console.log("failure")}
-      />
-    </React.Fragment>
-  );
-};
+        <GoogleLogin
+          clientId="573398896027-s2gkdto402okk0v9ie2sp7u97oh7nekj.apps.googleusercontent.com"
+          onSuccess={this.responseGoogle}
+          onFailure={this.responseGoogle}
+        />
+      </React.Fragment>
+    );
+  }
+}
 
 export default App;
